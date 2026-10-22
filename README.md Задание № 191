@@ -1,0 +1,39 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program191
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+
+            Console.Write("Нота (C, D, E, F, G, A, B): ");
+            string note = Console.ReadLine()?.Trim().ToUpper();
+            if (string.IsNullOrEmpty(note) || note.Length != 1)
+            {
+                Console.WriteLine("Ошибка.");
+                return;
+            }
+
+            string rus;
+            switch (note[0])
+            {
+                case 'C': rus = "До"; break;
+                case 'D': rus = "Ре"; break;
+                case 'E': rus = "Ми"; break;
+                case 'F': rus = "Фа"; break;
+                case 'G': rus = "Соль"; break;
+                case 'A': rus = "Ля"; break;
+                case 'B': rus = "Си"; break;
+                default:
+                    Console.WriteLine("Неверная нота.");
+                    return;
+            }
+            Console.WriteLine(rus);
+        }
+    }
+    }
